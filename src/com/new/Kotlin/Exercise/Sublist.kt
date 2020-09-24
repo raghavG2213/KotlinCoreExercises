@@ -1,15 +1,10 @@
 package com.new.Kotlin.Exercise
 
 import java.util.*
-import java.util.regex.Pattern
 
 fun main() {
 
-    val input = Scanner(System.`in`)
-
-    var a = listOf<Int>(1,2,3,4)
-    var b = listOf<Int>(1,2,3,4,4,1,2,3,4,5)
-
+    var (a,b) = listInput()
     var flag: Int = 0
 
     when{
@@ -21,6 +16,27 @@ fun main() {
             println("A is equal to B")}
         else -> println("A is not a superlist of, sublist of or equal to B")
     }
+
+}
+
+fun listInput(): Pair<List<Int>, List<Int>>{
+    val read = Scanner(System.`in`)
+    var no: Int
+    var l1 = mutableListOf<Int>()
+    var l2 = mutableListOf<Int>()
+    println("Enter the no. of elements in the First list: ")
+    no = read.nextInt()
+    println("Enter List : ")
+    for(i in 0 until no){
+        l1.add(read.nextInt())
+    }
+    println("Enter the no of elements of Second list: ")
+    no = read.nextInt()
+    println("Enter List: ")
+    for(i in 0 until no){
+        l2.add(read.nextInt())
+    }
+    return Pair(l1,l2)
 
 }
 
